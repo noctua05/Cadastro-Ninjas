@@ -21,7 +21,7 @@ public class MissoesModel {
 
     private String dificuldade;
 
-    @OneToMany
+    @OneToMany(mappedBy = "missoes",cascade = CascadeType.ALL, orphanRemoval = true )
     private List<NinjaModel> ninjas;
 
 }

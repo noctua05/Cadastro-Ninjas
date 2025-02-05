@@ -9,7 +9,7 @@ import lombok.Data;
 @AllArgsConstructor
 //JPA = java persistence API
 @Entity
-@Table(name =  "tb_cadastro")
+@Table(name =  "tb_ninjas")
 public class NinjaModel {
 
     @Id()
@@ -24,7 +24,7 @@ public class NinjaModel {
     private String idade;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "missoes")
     private MissoesModel missoes;
 
 }
