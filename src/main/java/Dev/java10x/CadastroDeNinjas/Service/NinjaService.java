@@ -17,7 +17,10 @@ public class NinjaService {
 
     //lista de todos os ninjas
     public List<NinjaModel> listarNinjas(){
+
         return ninjaRepository.findAll();
+
+
     }
 
 }

@@ -17,6 +17,8 @@ public class NinjaController {
     // Adicionar ninja (CREATE)
     @PostMapping
     public String criarNinja() {
+
+        System.out.println("funcionou");
         return "Ninja criado";
     }
 
