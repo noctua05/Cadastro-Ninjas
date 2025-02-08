@@ -17,7 +17,6 @@ public class NinjaController {
     // Adicionar ninja (CREATE)
     @PostMapping
     public String criarNinja() {
-
         System.out.println("funcionou");
         return "Ninja criado";
     }
@@ -31,8 +30,8 @@ public class NinjaController {
 
     // Mostrar ninja por ID (READ)
     @GetMapping("/{id}")
-    public String mostrarNinjaPorID(@PathVariable Long id) {
-        return "Ninja encontrado com ID: " + id;
+    public NinjaModel mostrarNinjaPorID(@PathVariable Long id) {
+        return ninjaService.encontraNinja(id);
     }
 
     // Alterar dados do ninja (UPDATE)
