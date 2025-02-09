@@ -1,9 +1,11 @@
 package Dev.java10x.CadastroDeNinjas.Model;
 
+import Dev.java10x.CadastroDeNinjas.Dto.NinjaDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Optional;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +29,13 @@ public class NinjaModel {
     @JoinColumn(name = "missoes")
     private MissoesModel missoes;
 
+
+    public NinjaModel(NinjaDto ninjaDto, MissoesModel missao){
+        this.nome = ninjaDto.nome();
+        this.email = ninjaDto.email();
+        this.idade = ninjaDto.idade();
+        this.missoes = missao;
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package Dev.java10x.CadastroDeNinjas.Controller;
 
+import Dev.java10x.CadastroDeNinjas.Dto.NinjaDto;
 import Dev.java10x.CadastroDeNinjas.Model.NinjaModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,15 +17,13 @@ public class NinjaController {
 
     // Adicionar ninja (CREATE)
     @PostMapping
-    public String criarNinja() {
-        System.out.println("funcionou");
-        return "Ninja criado";
+    public NinjaModel criarNinja(@RequestBody NinjaDto ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
-    public List<NinjaModel> listarNinjas()
-    {
+    public List<NinjaModel> listarNinjas() {
         return ninjaService.listarNinjas();
     }
 
