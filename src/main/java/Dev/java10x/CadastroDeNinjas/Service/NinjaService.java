@@ -25,7 +25,6 @@ public class NinjaService {
     //lista de todos os ninjas
     public List<NinjaModel> listarNinjas() {
         return ninjaRepository.findAll();
-
     }
 
     public  NinjaModel  encontraNinja(Long id){
@@ -37,8 +36,11 @@ public class NinjaService {
     public NinjaModel criarNinja(NinjaDto ninja) {
 
        MissoesModel missoesModel = missoesService.econtraMissao(ninja.missao());
-
        NinjaModel ninjaModel = new NinjaModel (ninja, missoesModel);
         return ninjaRepository.save(ninjaModel);
+    }
+
+    public void deletaNinja(Long id){
+        ninjaRepository.deleteById(id);
     }
 }
