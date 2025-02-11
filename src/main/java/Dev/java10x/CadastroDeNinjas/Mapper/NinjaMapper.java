@@ -19,7 +19,8 @@ public class NinjaMapper {
         MissoesModel missoesModel = missoesService.econtraMissao(dto.missao());
 
         NinjaModel ninjaModel = new NinjaModel();
-        ninjaModel.setId(dto.id());
+
+        //ninjaModel.setId(dto.id());
         ninjaModel.setNome(dto.nome());
         ninjaModel.setEmail(dto.email());
         ninjaModel.setIdade(dto.idade());
@@ -27,4 +28,15 @@ public class NinjaMapper {
 
         return ninjaModel;
     }
+
+    public NinjaDto toDto(NinjaModel ninjaModel) {
+        return new NinjaDto(
+                ninjaModel.getId(),
+                ninjaModel.getNome(),
+                ninjaModel.getEmail(),
+                ninjaModel.getIdade(),
+                ninjaModel.getMissoes() != null ? ninjaModel.getMissoes().getId() : null
+        );
+    }
+
 }

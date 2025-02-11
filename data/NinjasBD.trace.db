@@ -428,3 +428,6 @@ WHERE
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-11 10:16:45.301349-03:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE TB_NINJAS ALTER COLUMN id SET GENERATED ALWAYS [*]AS IDENTITY"; SQL statement:
+ALTER TABLE TB_NINJAS ALTER COLUMN id SET GENERATED ALWAYS AS IDENTITY [42000-232]
