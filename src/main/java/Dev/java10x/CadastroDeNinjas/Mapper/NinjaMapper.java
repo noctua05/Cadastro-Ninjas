@@ -15,7 +15,7 @@ public class NinjaMapper {
         this.missoesService = missoesService;
     }
 
-    public NinjaModel toModel(NinjaDto dto) {
+    public NinjaModel map(NinjaDto dto) {
         MissoesModel missoesModel = missoesService.econtraMissao(dto.missao());
 
         NinjaModel ninjaModel = new NinjaModel();
@@ -30,9 +30,9 @@ public class NinjaMapper {
         return ninjaModel;
     }
 
-    public NinjaDto toDto(NinjaModel ninjaModel) {
+    public NinjaDto map(NinjaModel ninjaModel) {
         return new NinjaDto(
-
+                ninjaModel.getId(),
                 ninjaModel.getNome(),
                 ninjaModel.getEmail(),
                 ninjaModel.getIdade(),
