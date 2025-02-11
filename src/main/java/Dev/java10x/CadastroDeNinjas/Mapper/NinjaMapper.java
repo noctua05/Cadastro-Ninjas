@@ -24,6 +24,7 @@ public class NinjaMapper {
         ninjaModel.setNome(dto.nome());
         ninjaModel.setEmail(dto.email());
         ninjaModel.setIdade(dto.idade());
+        ninjaModel.setRank(dto.rank());
         ninjaModel.setMissoes(missoesModel);
 
         return ninjaModel;
@@ -31,10 +32,11 @@ public class NinjaMapper {
 
     public NinjaDto toDto(NinjaModel ninjaModel) {
         return new NinjaDto(
-                ninjaModel.getId(),
+
                 ninjaModel.getNome(),
                 ninjaModel.getEmail(),
                 ninjaModel.getIdade(),
+                ninjaModel.getRank(),
                 ninjaModel.getMissoes() != null ? ninjaModel.getMissoes().getId() : null
         );
     }
