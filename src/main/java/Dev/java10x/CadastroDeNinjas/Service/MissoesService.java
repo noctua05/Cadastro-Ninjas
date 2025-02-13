@@ -1,7 +1,7 @@
 package Dev.java10x.CadastroDeNinjas.Service;
 
-import Dev.java10x.CadastroDeNinjas.Model.MissoesModel;
-import Dev.java10x.CadastroDeNinjas.Repository.MissoesRepository;
+import Dev.java10x.CadastroDeNinjas.Model.MissaoModel;
+import Dev.java10x.CadastroDeNinjas.Repository.MissaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import java.util.Optional;
 public class MissoesService {
 
     @Autowired
-    private MissoesRepository missoesRepository;
+    private MissaoRepository missaoRepository;
 
-    public MissoesModel econtraMissao(Long id){
-        Optional<MissoesModel> missaoModel = missoesRepository.findById(id);
+    public MissaoModel econtraMissao(Long id){
+        Optional<MissaoModel> missaoModel = missaoRepository.findById(id);
         return missaoModel.orElse(null);
     }
 

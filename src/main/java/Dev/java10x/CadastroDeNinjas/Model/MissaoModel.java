@@ -2,7 +2,6 @@ package Dev.java10x.CadastroDeNinjas.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.*;
 
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
-public class MissoesModel {
+public class MissaoModel {
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY )

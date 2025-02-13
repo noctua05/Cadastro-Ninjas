@@ -26,7 +26,7 @@ public class NinjaController {
     }
 
     // Mostrar todos os ninjas (READ)
-    @GetMapping("/listar")
+    @GetMapping
     public ResponseEntity<List<NinjaDto>> listarNinjas() {
         List<NinjaDto> ninjas = ninjaService.listarNinjas();
         return ResponseEntity.ok(ninjas);

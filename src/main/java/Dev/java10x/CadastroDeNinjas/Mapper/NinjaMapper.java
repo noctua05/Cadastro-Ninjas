@@ -1,7 +1,7 @@
 package Dev.java10x.CadastroDeNinjas.Mapper;
 
 import Dev.java10x.CadastroDeNinjas.Dto.NinjaDto;
-import Dev.java10x.CadastroDeNinjas.Model.MissoesModel;
+import Dev.java10x.CadastroDeNinjas.Model.MissaoModel;
 import Dev.java10x.CadastroDeNinjas.Model.NinjaModel;
 import Dev.java10x.CadastroDeNinjas.Service.MissoesService;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class NinjaMapper {
     }
 
     public NinjaModel map(NinjaDto dto) {
-        MissoesModel missoesModel = missoesService.econtraMissao(dto.missao());
+        MissaoModel missaoModel = missoesService.econtraMissao(dto.missao());
 
         NinjaModel ninjaModel = new NinjaModel();
 
@@ -25,7 +25,7 @@ public class NinjaMapper {
         ninjaModel.setEmail(dto.email());
         ninjaModel.setIdade(dto.idade());
         ninjaModel.setRank(dto.rank());
-        ninjaModel.setMissoes(missoesModel);
+        ninjaModel.setMissoes(missaoModel);
 
         return ninjaModel;
     }

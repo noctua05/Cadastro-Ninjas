@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Optional;
-
 @Data
 @NoArgsConstructor
 //JPA = java persistence API
@@ -32,10 +30,10 @@ public class NinjaModel {
 
     @ManyToOne
     @JoinColumn(name = "missoes")
-    private MissoesModel missoes;
+    private MissaoModel missoes;
 
 
-    public NinjaModel(NinjaDto ninjaDto, MissoesModel missao){
+    public NinjaModel(NinjaDto ninjaDto, MissaoModel missao){
         this.nome = ninjaDto.nome();
         this.email = ninjaDto.email();
         this.idade = ninjaDto.idade();
