@@ -48,7 +48,7 @@ public class NinjaController {
     @PutMapping("/{id}")
     public ResponseEntity<?> alterarNinja(@PathVariable Long id, @RequestBody NinjaDto ninja) {
         NinjaDto ninjaAlterado = ninjaService.atualizaNinja(id, ninja);
-        if(ninja != null){
+        if(ninjaAlterado != null){
             return ResponseEntity.ok(ninjaAlterado);
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -60,11 +60,10 @@ public class NinjaController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletarNinjaPorID(@PathVariable Long id) {
         if( ninjaService.encontraNinja(id) != null) {
-
             ninjaService.deletaNinja(id);
             return ResponseEntity.noContent().build();
         }else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe nenhum ninja com esse ID");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("\"Ninja com o id " +id+" não existe na base de dados");
 
         }
     }
