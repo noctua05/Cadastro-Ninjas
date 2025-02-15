@@ -1,8 +1,8 @@
 package Dev.java10x.CadastroDeNinjas.Controller;
 
 
-import Dev.java10x.CadastroDeNinjas.Model.MissaoModel;
-import Dev.java10x.CadastroDeNinjas.Service.MissoesService;
+import Dev.java10x.CadastroDeNinjas.Dto.MissaoDto;
+import Dev.java10x.CadastroDeNinjas.Service.MissaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +15,12 @@ public class MissaoController {
 
 
     @Autowired
-    private MissoesService missoesService;
+    private MissaoService missaoService;
+    private MissaoDto missaoDto;
 
     @GetMapping("/{id}")
-    public MissaoModel mostrarMissaoPorID (@PathVariable Long id){
-        return missoesService.econtraMissao(id);
+    public MissaoDto mostrarMissaoPorID (@PathVariable Long id){
+        return missaoService.econtraMissao(id);
     }
 
 

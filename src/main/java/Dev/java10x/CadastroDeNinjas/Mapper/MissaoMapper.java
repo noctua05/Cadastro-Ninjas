@@ -2,7 +2,9 @@ package Dev.java10x.CadastroDeNinjas.Mapper;
 
 import Dev.java10x.CadastroDeNinjas.Dto.MissaoDto;
 import Dev.java10x.CadastroDeNinjas.Model.MissaoModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MissaoMapper {
 
     public MissaoModel map(MissaoDto MissaoDto){

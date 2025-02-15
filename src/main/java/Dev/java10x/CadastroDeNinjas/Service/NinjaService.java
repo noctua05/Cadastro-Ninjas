@@ -14,13 +14,11 @@ import java.util.stream.Collectors;
 @Service
 public class NinjaService {
 
-    private final MissoesService missoesService;
     private final NinjaRepository ninjaRepository;
     private final NinjaMapper ninjaMapper;
 
     @Autowired
-    public NinjaService(NinjaMapper ninjaMapper,MissoesService missaoService, NinjaRepository ninjaRepository) {
-        this.missoesService = missaoService;
+    public NinjaService(NinjaMapper ninjaMapper, NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
         this.ninjaMapper = ninjaMapper;
     }
