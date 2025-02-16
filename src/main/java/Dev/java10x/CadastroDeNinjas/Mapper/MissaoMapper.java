@@ -10,7 +10,7 @@ public class MissaoMapper {
     public MissaoModel map(MissaoDto MissaoDto){
         MissaoModel missaoModel = new MissaoModel();
 
-        missaoModel.setId(MissaoDto.id());
+        //missaoModel.setId(MissaoDto.id());
         missaoModel.setNome(MissaoDto.nome());
         missaoModel.setDificuldade(MissaoDto.dificuldade());
         return missaoModel;

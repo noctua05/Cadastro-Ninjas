@@ -20,7 +20,7 @@ public class NinjaMapper {
     }
 
     public NinjaModel map(NinjaDto dto) {
-        MissaoModel missaoModel = missaoMapper.map(missaoService.econtraMissao(dto.missao()));
+        MissaoModel missaoModel = missaoMapper.map(missaoService.encontraMissao(dto.missao()));
         NinjaModel ninjaModel = new NinjaModel();
 
         //ninjaModel.setId(dto.id());
