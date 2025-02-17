@@ -1,7 +1,6 @@
 package Dev.java10x.CadastroDeNinjas.Mapper;
 
 import Dev.java10x.CadastroDeNinjas.Dto.NinjaDto;
-import Dev.java10x.CadastroDeNinjas.Model.MissaoModel;
 import Dev.java10x.CadastroDeNinjas.Model.NinjaModel;
 import Dev.java10x.CadastroDeNinjas.Service.MissaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ public class NinjaMapper {
     }
 
     public NinjaModel map(NinjaDto dto) {
-        MissaoModel missaoModel = missaoMapper.map(missaoService.encontraMissao(dto.missao()));
         NinjaModel ninjaModel = new NinjaModel();
 
         //ninjaModel.setId(dto.id());
@@ -28,7 +26,6 @@ public class NinjaMapper {
         ninjaModel.setEmail(dto.email());
         ninjaModel.setIdade(dto.idade());
         ninjaModel.setRank(dto.rank());
-        ninjaModel.setMissoes(missaoModel);
 
         return ninjaModel;
     }

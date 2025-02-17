@@ -41,6 +41,12 @@ public class MissaoService {
                 .orElse(null);
     }
 
+    // No MissaoService
+    public Optional<MissaoModel> encontraMissaoModel(Long id) {
+        return missaoRepository.findById(id);
+    }
+
+
     // Cria uma nova missão
     public MissaoDto criaMissao(MissaoDto missaoDto) {
         MissaoModel missaoModel = missaoMapper.map(missaoDto);
